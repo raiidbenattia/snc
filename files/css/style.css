@@ -3871,7 +3871,7 @@ figure {
 .services-item-a {
   border-right: 1px solid var(--colors--white-70);
   width: 100%;
-  height: 100%;
+  height: 700px;
   position: relative;
   overflow: hidden;
 }
@@ -3882,6 +3882,7 @@ figure {
 
 .services-image {
   height: 700px;
+  position: absolute;
 }
 
 .services-content-wrap {
@@ -3891,7 +3892,6 @@ figure {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  position: absolute;
   inset: 0%;
   color: var(--colors--white);
 }
@@ -3899,7 +3899,8 @@ figure {
 .services-icon-wrap {
   width: 100%;
   height: 100px;
-  background-color: white;
+  backdrop-filter: blur(5px);
+  border: 1px solid;
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -3925,6 +3926,7 @@ figure {
   align-items: start;
   justify-content: space-evenly;
   gap: 5px;
+  width: 100%;
 }
 
 .pole-content .num {
@@ -8805,7 +8807,7 @@ figure {
   }
 
   .services-item-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .commitment-title-wrap {
@@ -9761,6 +9763,17 @@ figure {
     border-bottom: 1px solid var(--colors--dark-10);
   }
 
+  .services-item-wrap {
+    grid-template-columns: 1fr
+  }
+
+  .services-item-a {
+    width: 90%;
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .project-info-wrap,
   .project-list ul {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -10032,8 +10045,17 @@ figure {
 
   .services-item-wrap {}
 
+  .services-content-wrap {
+    padding: 15px
+  }
+
+  .pole-content ul li {
+    font-size: 14px;
+  }
+
   .services-item-a {
     border-right-style: none;
+    width: 100%;
   }
 
   .services-title {
