@@ -3545,7 +3545,7 @@ figure {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
-  grid-template-columns: minmax(554px, 1fr) 1fr;
+  grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   display: grid;
 }
@@ -3644,10 +3644,41 @@ figure {
   height: 100%;
 }
 
-.hero-image-wrap {
-  border-radius: var(--_size-variables---border-radius--radius-regular);
-  height: 100%;
+.hero-image-wrapper {
+  overflow: hidden
+}
+
+.slider {
+  width: 100%;
   overflow: hidden;
+  scroll-snap-type: x mandatory;
+  border-left: 3px solid gray;
+  border-right: 3px solid gray;
+  border-radius: 16px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  gap: 10px;
+  animation: scroll-left 20s linear infinite;
+}
+
+.track img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0)
+  }
 }
 
 .hero-image {
@@ -3668,6 +3699,23 @@ figure {
 
 .badges {
   margin-top: 20px;
+}
+
+.badges ul {
+  display: flex;
+  gap: 40px;
+}
+
+.badges ul li {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px) {
+  .badges ul {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .hero-video {
@@ -3887,6 +3935,7 @@ figure {
 
 .services-content-wrap {
   padding: 40px;
+  height: 100%;
   text-align: center;
   flex-flow: column;
   justify-content: space-between;
@@ -8784,9 +8833,7 @@ figure {
     display: none;
   }
 
-  .home-hero-wrapper {
-    grid-template-columns: 1fr;
-  }
+  .home-hero-wrapper {}
 
   .hero-button-wrap {
     flex-flow: wrap;
